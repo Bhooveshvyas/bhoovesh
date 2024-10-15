@@ -148,6 +148,7 @@ int main()
 			// n/=i;
 		}
 	}
+	// new 
 	cout<<n/ans<<" "<<ans<<endl;
 	// }
 	return 0;
