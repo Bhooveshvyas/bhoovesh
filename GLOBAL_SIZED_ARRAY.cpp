@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+// DECLARING AN ARRAY GLOBALLY {MTLB INT MAIN KE BAHR}.
+const int n = 1e7;
+int a[n];
+int main()
+{
+    // LOCALLY THE LIMIT OF THE SIZE OF AN ARRAY IS MAXIMUM 10^5.AND IF YOU ARE DECLARING AN ARRAY GLOBALLY SO THE SIZE OF TEH ARRAY WILL BE OF AN ORDER OF 1e7.
+    // DECLARING AN ARRAY LOCALLY {MTLB INT MAIN KE ANDAR}.
+    a[n - 1] = 20;
+    cout << a[n - 1] << endl;
+    // THE ABOVE SCENAARIO IS ONLY FOR GLOBAL ARRAY.
+}
