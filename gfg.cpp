@@ -1,71 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-#define nl "\n"
-
-vector<vector<int>> ans;
-
-void solve(int i, vector<string> &v, string s)
+#define shivam \
+    int t;     \
+    cin >> t;  \
+    while (t--)
+#define yy cout << "YES" << endl;
+#define no cout << "NO" << endl;
+#define N 10000000
+#define mod 1000000007
+#define dom 998244353
+#define loop(n) for (int i = 0; i < (n); i += 1)
+#define int long long
+#define pr(x) cout << x << endl;
+#define print(x)                       \
+    for (int i = 0; i < x.size(); i++) \
+        cout << x[i] << " ";           \
+    cout << endl;
+long long calc(long long k, long long l, long long t, long long cntTasks)
 {
-    if (i = s.length())
-    {
-        v.push_back(s);
-    }
+    return k * l + min(2 * k, cntTasks) * t;
 }
 
-void maxVal(vector<int> &arr)
+signed main()
 {
-    int mini = INT_MAX, maxidx = -1, maxi = INT_MIN;
-    int n = arr.size();
-    for (int i = 0; i < n; i++)
+    shivam
     {
-        if (maxi < arr[i])
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        int min = INT_MAX;
+        for (int i = 0; i < n; i++)
         {
-            maxi = max(arr[i] - i, maxi);
-            maxidx = i;
+            cin >> v[i];
+            if (min > v[i])
+                min = v[i];
         }
+        if (v[0] > min)
+            cout << "Alice" << endl;
+        else
+            cout << "Bob" << endl;
     }
-    int x = -1;
-    for (int i = 0; i < n; i++)
-    {
-        if (mini > arr[i] && i != maxidx)
-            mini = min(mini, arr[i] - i), x = i;
-    }
-    cout << maxi << " " << maxidx << endl;
-    cout << mini << " " << x << endl;
-    return;
-}
-void maximizeArray(int arr1[], int arr2[], int n)
-{
-    vector<int> ans;
-    set<int> s;
-    for (int i = 0; i < n; i++)
-        s.insert(arr2[i]);
-    for (int i = 0; i < n; i++)
-        s.insert(arr1[i]);
-    set<pair<int, int>> s2;
-    int k = 0;
-    for (auto &i : s)
-        s2.insert({i, k++});
-    vector<pair<int, int>> temp;
-    for (auto &i : s2)
-    {
-        temp.push_back({i.first, i.second});
-    }
-    sort(temp.begin(),temp.end(),[](pair<int,int>&p1,pair<int,int>&p2){
-        return p1.first>p2.first;
-    });
-    for(auto&i:temp)cout<<i.first<<" "<<i.second<<endl;
-}
-
-int main()
-{
-    int n;
-    cin >> n;
-    int a[n], b[n];
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-    for (int i = 0; i < n; i++)
-        cin >> b[i];
-    maximizeArray(a, b, n);
+    return 0;
 }

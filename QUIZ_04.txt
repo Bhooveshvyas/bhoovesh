@@ -1,0 +1,14 @@
+try except else
+try->jo bhi erro hoga woh isme ayega or agr error aya to ye try block usko bhejega except block mien.
+except->except block mien jo error hoga woh ayrga try block se and jo kuch bhi apne actoins likhe hai i.e. whatever written will be executed.
+else -> ye block isliye rehta hai mtlb agr koi erro nahi aya toh code try mien nahi jayega i.e. else block ka code execute hoga.
+
+a=int(input("ENTER A NUMBER : "))
+b=int(input("ENTER A NUMBER : "))
+try:
+    c=a/b
+    print(c)
+except:
+    print(f"HENCE B = {b}, SO DIVISION IS NOT POSSIBLE.")
+else:
+    print("DIVISION = ",a/b)

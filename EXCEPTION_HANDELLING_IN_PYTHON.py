@@ -1,0 +1,14 @@
+a = int(input("ENTER FIRST NUMBER : "))
+b = int(input("ENTER SECOND NUMBER : "))
+
+
+# AGR TRY M SAB THIK THAK HAI TOH ELSE BI TRY KE SATH ME EXECUTE HOGA 
+# AGR TRY MIEN DIKKAT RAHI TOH FR SIRF OR SIRF EXCEPT EXECUTE HOGA
+
+try:
+    c=a/b
+    print("RESULT : ",c)
+except:
+    print("CAN'T DIVIDE BY ZERO.")
+else:
+    print("KUCH NAHI")

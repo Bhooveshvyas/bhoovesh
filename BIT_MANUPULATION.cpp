@@ -3,11 +3,13 @@ using namespace std;
 
 void printBinary(int n)
 {
+    cout << "YEH PRINT KAR RHA HAI 10->0"<<endl;
     for (int i = 10; i >= 0; --i)
     {
-        cout << ((n >> i) & 1);
+        cout <<i<<"th -> "<< ((n >> i) & 1)<<" ";
     }
     cout << endl;
+
 }
 
 int main()

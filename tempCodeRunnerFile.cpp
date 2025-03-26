@@ -1,32 +1,51 @@
-#include <bits/stdc++.h>
-using namespace std;
+
+ll solve(vector<vector<ll>> &v, ll i, ll j, ll m, ll n)
+{
+	if (m == 0 && n == 0)
+		return v[0][0];
+	ll ans = 0;
+	int sei = i, sej = j, swi = i, swj = j;
+	int nei = i, nej = j, nwi = i, nwj = j;
+	while (sei < m && sej < n)
+	{
+		ans += v[sei++][sej++];
+	}
+	while (swi < m && swj >= 0)
+	{
+		ans += v[swi++][swj--];
+	}
+	while (nei >= 0 && nej < n)
+	{
+		ans += v[nei--][nej++];
+	}
+	while (nei >= 0 && nej >= 0)
+	{
+		ans += v[nei--][nej--];
+	}
+	return ans;
+}
+
 int main()
 {
-    int n, t, i, k, ma;
-    cin >> t;
-    while (t--)
-    {
-        ma = 1, k = 1;
-        cin >> n;
-        int a[n];
-        for (i = 0; i < n; i++)
-        {
-            cin >> a[i];
-        }
-        sort(a, a + n);
-        for (i = 0; i < n - 1; i++)
-        {
-            if (a[i] == a[i + 1])
-            {
-                k++;
-            }
-            else
-            {
-                k = 1;
-            }
-            ma = max(ma, k);
-        }
-        cout << n - ma << endl;
-    }
-    return 0;
+	bhoovesh
+	{
+		ll m, n;
+		cin >> m >> n;
+		vector<vector<ll>> v(m, vector<ll>(n));
+		for (int i = 0; i < m; i++)
+		{
+			for (int j = 0; j < n; j++)
+				cin >> v[i][j];
+		}
+		long long ans = 0;
+		for (ll i = 0; i < m; i++)
+		{
+			for (ll j = 0; j < n; j++)
+			{
+				ans = max(ans, solve(v, i, j, m, n));
+			}
+		}
+		cout << ans << endl;
+	}
+	return 0;
 }

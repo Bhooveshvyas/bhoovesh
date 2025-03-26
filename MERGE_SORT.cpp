@@ -60,7 +60,7 @@ int a[7] = {1, 8, 5, 6, 7, 3, 2};
 
 void merge(int l, int r, int mid)
 {
-    int l_sz = mid - l + 1; 
+    int l_sz = mid - l + 1;
     int L[l_sz + 1];
     int r_sz = r - mid;
     int R[r_sz + 1];

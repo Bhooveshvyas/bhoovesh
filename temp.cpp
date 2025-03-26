@@ -1,49 +1,53 @@
 #include <bits/stdc++.h>
 using namespace std;
-int solve(int n){
-        vector<int> v(32);
-        for(int m=31;m>=0;m--){
-            v[m]=(n & (1<<m));
-        }
-}
-void unset(int n,int bit){
-    for(int i=31;i>0;i--){
 
-    }
-}
-vector<int> minBitwiseArray(vector<int>& nums) {
-        int n=nums.size();
-        vector<int> ans(n);
-        for(int i=0;i<n;i++){
-            if(nums[i]%2==0){
-                ans[i]=-1;
+class Solution
+{
+public:
+    vector<int> queryResults(int k, vector<vector<int>> &nums)
+    {
+        int n = nums.size();
+        vector<int> ans;
+        unordered_set<int> temp;
+        unordered_map<int, int> m1;
+        unordered_map<int, int> m2;
+        for (int i = 0; i < n; i++)
+        {
+            int x = nums[i][0];
+            int color = nums[i][1];
+            if (m1.find(x) != m1.end())
+            {
+                if (m1[x] != color)
+                {
+                    m1[x]--;
+                    if (m1[x] == 0)
+                        temp.erase(m1[x]);
+                }
+                m2[color]++;
+                m1[x] = color;
             }
-            else{
-                int bit = solve(v[i]);
-                unset(v[i],bit);
+            else
+            {
+                m1[x] = color;
+                m2[color]++;
             }
+            temp.insert(color);
+            ans.push_back(temp.size());
         }
         return ans;
-}
+    }
+};
+
 int main()
 {
     int n;
     cin >> n;
-    for(int i=31;i>=0;i--){
-        cout<<n&(1<<i)<<" ";
-    }
-    // int t;
-    // cin >> t;
-// vector<int> v;
-    vector<int> v(n);
+    vector<vector<int>> nums(n, vector<int>(2));
+    int x, y;
     for (int i = 0; i < n; i++)
     {
-        cin >> v[i];
+        cin >> x >> y;
+        nums[i][0] = x;
+        nums[i][1] = y;
     }
-    cout<<minBit
 }
-
-//      a
-//   aa    aa
-//  aaa    aaaa
-//  aaaa    aaaaa
